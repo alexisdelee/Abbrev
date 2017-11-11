@@ -13,6 +13,7 @@ struct Node
 typedef struct Commit Commit;
 struct Commit
 {
+    int entropy;
     Node *tree;
     void (*add)(char *, struct Commit);
     char *(*abbrev)(char *, struct Commit);

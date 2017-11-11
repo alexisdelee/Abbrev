@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     char *shortestId = commit.abbrev("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", commit);
 
     if(shortestId != NULL) {
-        printf("%s\n", shortestId);
+        printf("%s\n", shortestId); // a94a8fe5ccb19
         free(shortestId);
     }
 

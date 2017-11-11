@@ -13,6 +13,7 @@ Commit commitInit()
 {
     Commit commit;
 
+    commit.entropy = 7;
     commit.tree = initNode('.');
     commit.add = build;
     commit.abbrev = abbrev;
@@ -73,9 +74,13 @@ char *abbrev(char *chain, Commit commit)
 {
     Node *seed = commit.tree;
     int i, j;
-    int entropy = 7;
+    int entropy = commit.entropy;
     char *shortestId = NULL;
     int size = 1;
+
+    if(entropy < 1) {
+        return NULL;
+    }
 
     for(i = 0; i < entropy; i++) {
         if(seed->next) {

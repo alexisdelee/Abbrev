@@ -8,7 +8,7 @@ Au lieu d'afficher la référence complète de n octets, cet outil permet la dé
 
 ## Example
 
-Ajoutons les valeurs suivantes grâce à la fonction commit.add :  
+Ajoutons les valeurs suivantes grâce à la fonction  __``commit.add``__ :  
 
  - a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 
  - a94a8fe5ccb18ba61c4c0873d391e987982fbbd3 
@@ -31,7 +31,7 @@ L'arbre suivant est ainsi généré :
 `-- 1edbf3da8cde6b893130354e79ba15fca2269959 
 ```
 
-Si nous faisons une recherche (commit.abbrev) sur les valeurs suivantes, voyons les résultats qui en ressortent :  
+Si nous faisons une recherche (__``commit.abbrev``__) sur les valeurs suivantes, voyons les résultats qui en ressortent :  
 
  - 697bc46e1beaa1667601998bc72be435e5f8666f => 697bc46 
  - 1edbf3da8cde6b893130354e79ba15fca2269959 => 1edbf3d 

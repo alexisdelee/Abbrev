@@ -21,6 +21,9 @@ int main(int argc, char **argv)
         free(shortestId);
     }
 
+    Token *token = commit.find("a94a8fe5ccb19", commit);
+    free(token);
+
     commit.free(commit);
 
     return 0;

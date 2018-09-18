@@ -7,6 +7,7 @@
 Node *initNode(char);
 void build(char *, Commit);
 char *abbrev(char *, Commit);
+Token *findCommit(char *, Commit);
 void freeCommit(Commit);
 
 Commit commitInit()
@@ -17,6 +18,7 @@ Commit commitInit()
     commit.tree = initNode('.');
     commit.add = build;
     commit.abbrev = abbrev;
+    commit.find = findCommit;
     commit.free = freeCommit;
 
     return commit;
@@ -113,6 +115,34 @@ char *abbrev(char *chain, Commit commit)
     }
 
     return shortestId;
+}
+
+Token *findCommit(char *chain, Commit commit)
+{
+    Node *seed = commit.tree;
+    Token *token = malloc(sizeof(Token));
+    int i, j, size = strlen(chain);
+
+    // debug
+    for(i = 0; i < size; i++) {
+        if(seed->next) {
+            for(j = 0; j < seed->size; j++) {
+                if(seed->next[j]->hexa == chain[i]) {
+                    printf("[%c]\n", seed->next[j]->hexa);
+
+                    seed = seed->next[j];
+                    break;
+                }
+            }
+        } else {
+            break;
+        }
+    }
+
+    printf("final {%p}\n", seed);
+    // debug
+
+    return token;
 }
 
 void freeCommit(Commit commit)
